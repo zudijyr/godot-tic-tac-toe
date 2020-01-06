@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://board.gd" type="Script" id=1]
+[ext_resource path="res://square.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Label.gd" type="Script" id=3]
+[ext_resource path="res://pictionary_01_Title Screen.ogg" type="AudioStream" id=4]
+
+[node name="Board" type="Node2D"]
+position = Vector2( 141.677, 120.261 )
+script = ExtResource( 1 )
+
+[node name="squares" type="Node" parent="."]
+
+[node name="Square" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 143.324, 107.082 )
+
+[node name="Node2D" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 293.902, 109.377 )
+
+[node name="Node2D2" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 454.861, 109.606 )
+
+[node name="Node2D3" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 131.569, 241.668 )
+
+[node name="Node2D4" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 294.867, 243.836 )
+
+[node name="Node2D5" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 453.038, 243.817 )
+
+[node name="Node2D6" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 135.66, 375.711 )
+
+[node name="Node2D7" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 288.178, 375.65 )
+
+[node name="Node2D8" parent="squares" instance=ExtResource( 2 )]
+position = Vector2( 454.685, 378.905 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 406.0
+margin_top = -38.0
+margin_right = 499.0
+margin_bottom = -19.0
+rect_scale = Vector2( 3, 3 )
+text = "Turn: Player 1"
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

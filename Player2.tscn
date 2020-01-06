@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/WWT-06.png-a16b61cdadeeed4ab2c9f5eec8b79c7c.stex"
+
+[node name="Node2D" type="Sprite"]
+position = Vector2( 43, 50 )
+texture = SubResource( 1 )

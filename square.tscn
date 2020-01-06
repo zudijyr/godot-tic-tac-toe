@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Area2D.gd" type="Script" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Polygon2D
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+#func _input(event):#
+#	if event is InputEventMouseButton \\
+#		and event.button_index == BUTTON_LEFT \\
+#		and event.is_pressed():
+#			var ind = preload(\"res://Indicator.tscn\")
+#			var new_indicator = ind.instance()
+#			print(position)
+#			var poly2d = get_child(0)
+#			new_indicator.position = self.position
+#			add_child(new_indicator)"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+position = Vector2( 1, 0.971428 )
+scale = Vector2( 1, 1.02857 )
+polygon = PoolVector2Array( -59.4005, -48.9722, -60.4005, 52.1389, 57.5995, 50.1945, 57.5995, -48.9722 )
+script = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -56.4005, 50.6, 57.5995, 51.6, 56.5995, -50.4, -59.4005, -49.4 )
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_Area2D_input_event"]
